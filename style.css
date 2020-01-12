@@ -1,0 +1,21 @@
+header {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#logo h1 {
+    font-size: 100px;
+    margin: 0px 0px 0px 0px;
+}
+#logo p {
+    margin: -20px 0px 20px 0px;
+}
+
+#nav1 {
+    padding-left: 15px;
+}
+#nav1 a {
+    font-size: 20px;
+    padding-right: 15px;
+    display: inline;
+}
