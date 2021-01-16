@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'mainfont';
+    /* add more font types */
+    src: url('san_francisco\SF UI\SF-UI-Display\SF-UI-Display-Regular.otf') format('opentype');
+}
+* {
+    margin: 0;
+    font-family: 'mainfont', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-color: rgb(60, 60, 60);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+body, html {
+    height: 100%;
+}
+
+.MainContainer {
+    flex: 1;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.HeaderContainer {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.HeaderBg {
+    background-image: url("mountains.jpg");
+    background-position: center;
+    background-size: 100%;
+    z-index: -1;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    filter: blur(3px);
+    /*no white edges on blur*/
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    margin: -8px;
+}
+.HeaderText {
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+
+    transition: 0.5s;
+}
+.HeaderText p {
+    display: inline;
+    margin: 0px;
+}
+.textzim {
+    padding-left: 30px;
+    font-size: 90px;
+}
+.textro {
+    font-size: 20px;
+}
+.HeaderDescription {
+    margin-top: -15px;
+    padding-top: -50px;
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+/* Navigation */
+.NavContainer {
+    background-color: rgb(24, 24, 24);
+    height: 27px;
+}
+.NavContainer ul {
+    display: flex;
+    justify-content: center;
+    color: white;
+
+    padding-top: 3px;
+    padding-left: 0px;
+    margin: 0px;
+}
+.NavContainer ul li {
+    float: left;
+    list-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.NavContainer ul li a {
+    text-decoration: none;
+    color: white;
+}
+.NavContainer ul li:hover{
+    background-color: rgb(100, 100, 100);
+}
+
+footer {
+    background-color: rgb(24, 24, 24);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    flex: 0;
+    flex-grow: 0;
+}
+footer p {
+    color: white;
+    margin: 0px;
+}

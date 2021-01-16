@@ -1,0 +1,117 @@
+/* Image Gallery */
+.GalleryContainer {
+    width: calc(100% - 40px);
+    padding: 20px;
+}
+.GalleryContainer ul {   
+    display: flex;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+.GalleryContainer ul li {
+    list-style: none;
+    background: rgb(24, 24, 24);
+    color: #eee;
+    padding: 8px 20px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.GalleryContainer ul li.active {
+    background: #f4d003;
+    color: rgb(0, 0, 0);
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product .itemBox {
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    /* flex: 1;
+    min-width: 256px; */
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+.product .itemBox:hover {
+    transform: scale(1.025);
+}
+.product .itemBox img {
+    position: flex;
+    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: 4px;
+}
+
+/* imageviewer */
+.imageView {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222222dd;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+    transition: 0.25s;
+}
+.imageView-visible {
+    pointer-events: all;
+    opacity: 1;
+}
+.imageViewPanel {
+    padding: 16px;
+    background-color: #333;
+    display: flex;
+    flex: 0;
+    flex-grow: 0;
+}
+.imageViewSpacer {
+    flex: 1;
+    flex-grow: 1;
+}
+.imageViewClose {
+    color: #eee;
+    cursor: pointer;
+    flex: 0;
+    flex-grow: 0;
+}
+.imageViewClose img {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+
+    transition: 0.3s;
+}
+.imageViewClose img:hover {
+    transform: scale(1.2);
+}
+.imageViewImage {
+    position: relative;
+    margin: 16px;
+    height: calc(100% - 80px);
+    text-align: center;
+}
+.imageViewImage img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    max-height: 720px;
+}

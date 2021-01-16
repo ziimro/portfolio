@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Main Page</title>
+        <meta name="description" content="TBD">
+        <meta name="author" content="Zim">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="gallerystyle.css">
+    </head>
+
+    <body>
+        <div class="MainContainer">
+            
+            <header>
+                <div class="HeaderContainer">
+                    <div class="HeaderBg"></div>
+                    <div class="HeaderText">
+                        <p class="textzim">Zim</p>
+                        <p class="textro">(ro)</p>
+                    </div>
+                    <div class="HeaderDescription">
+                        <p>Graphic Designer / Editor / Dev</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="NavContainer">
+                <ul>
+                    <li><a href="index.html">Main</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="GalleryContainer">
+                <ul>
+                    <li class="list active" data-filter="All">All</li>
+                    <li class="list" data-filter="Thumbnails">Thumbnails</li>
+                    <li class="list" data-filter="Logos">Logos</li>
+                    <li class="list" data-filter="Graphics">Graphics</li>
+                </ul>
+                <div class="product">
+                    <div class="itemBox Graphics"><img src="galleryimages/Chingsoundcloud.png"></div>
+                    <div class="itemBox Graphics"><img src="galleryimages/isometric project-02-21.png"></div>
+                    <div class="itemBox Graphics"><img src="galleryimages/Zim wallpaper.png"></div>
+                    <div class="itemBox Graphics"><img src="galleryimages/twitch banner.png"></div>
+
+                    <div class="itemBox Thumbnails"><img src="galleryimages/Ghost & Smite Lillia Jungle.png"></div>
+                    <div class="itemBox Thumbnails"><img src="galleryimages/Destroying Evelynn in 3 minutes.png"></div>
+                    <div class="itemBox Thumbnails"><img src="galleryimages/Unranked to Diamond.png"></div>
+
+                    <div class="itemBox Logos"><img src="galleryimages/FraGZ team logov2.png"></div>
+                    <div class="itemBox Logos"><img src="galleryimages/Zim logo tiangle-01.png"></div>
+                    <div class="itemBox Logos"><img src="galleryimages/Zimavatar.png"></div>
+                    
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                    <div class="itemBox Graphics Thumbnails Logos"></div>
+                </div>
+                <div class="fulscreenimg"></div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="Footer">
+                <p>&copy; Zim 2020-2021</p>
+            </div>
+        </footer>
+
+        <div class="imageView">
+            <div class="imageViewPanel">
+                <div class="imageViewSpacer"></div>
+                <div class="imageViewClose"><img class="closeicon" src="closeicon.svg"></div>
+            </div>
+            <div class="imageViewImage">
+                <img>
+            </div>
+        </div>
+
+        <script
+		    src="https://code.jquery.com/jquery-3.5.1.js"
+			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="gallery.js"></script>
+    </body>
+</html>

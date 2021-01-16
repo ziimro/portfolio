@@ -1,0 +1,80 @@
+/* Text Section */
+.ContentFiller {
+    /*background-color: grey;*/
+    width: 100%;
+    height: calc(100% -15px);
+    margin: 15px;
+}
+.ContentFiller h1{
+    margin: 10px;
+    color: white;
+}
+.ContentFiller p{
+    font-size: 17px;
+    margin: 10px;
+    color: white;
+}
+.HorizontalSeparator2 {
+    background-color: grey;
+    height: 1px;
+    margin: 10px;
+}
+.dogpat {
+    width: 400px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+/* Socials Sidebar */
+.SocialsContainer {
+    display: flex;
+    flex-direction: row;
+
+    flex: 1;
+    flex-grow: 1;
+}
+.Socials {
+    margin: 15px;
+}
+.HorizontalSeparator {
+    background-color: grey;
+    height: 1px;
+    margin-top: 15px;
+}
+.SocialsColumnSeparator {
+    background-color: gray;
+    width: 1px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    flex-shrink: 0;
+}
+.SocialLinks {
+    color: white;
+    margin-top: 10px;
+}
+.SocialLinks a {
+    display: block;
+}
+.SocialIcons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    height: 55px;
+}
+.SocialIcons img {
+    width: 50px;
+    height: 50px;
+    padding-left: 5px;
+    
+    transition: 100ms;
+}
+.SocialIcons img:hover {
+    transform: scale(1.07);
+}
+.HorizontalSeparator3 {
+    background-color: grey;
+    height: 1px;
+    margin-bottom: 10px;
+}
