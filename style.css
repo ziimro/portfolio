@@ -15,17 +15,15 @@ body {
     flex-direction: column;
     min-height: 100%;
 }
-
 body, html {
     height: 100%;
 }
 
 .MainContainer {
-    flex: 1;
-    flex-grow: 1;
-
     display: flex;
     flex-direction: column;
+    flex: 1;
+    flex-grow: 1;
 }
 
 /* Header */
@@ -33,6 +31,7 @@ body, html {
     height: 200px;
     position: relative;
     overflow: hidden;
+    cursor: default;
 }
 .HeaderBg {
     background-image: url("images/mountains.jpg");
@@ -54,8 +53,6 @@ body, html {
     text-align: center;
     padding-top: 50px;
     color: white;
-
-    transition: 0.5s;
 }
 .HeaderText p {
     display: inline;
@@ -70,7 +67,6 @@ body, html {
 }
 .HeaderDescription {
     margin-top: -15px;
-    padding-top: -50px;
     color: white;
     text-align: center;
     display: block;
@@ -79,22 +75,26 @@ body, html {
 /* Navigation */
 .NavContainer {
     background-color: rgb(24, 24, 24);
-    height: 27px;
+    height: auto;
 }
 .NavContainer ul {
     display: flex;
     justify-content: center;
     color: white;
 
-    padding-top: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     padding-left: 0px;
-    margin: 0px;
 }
 .NavContainer ul li {
     float: left;
     list-style: none;
-    padding-left: 5px;
-    padding-right: 5px;
+
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+
     font-size: 18px;
     transition: 0.3s;
     cursor: pointer;
@@ -105,6 +105,7 @@ body, html {
 }
 .NavContainer ul li:hover{
     background-color: rgb(100, 100, 100);
+    border-radius: 2px;
 }
 
 footer {
