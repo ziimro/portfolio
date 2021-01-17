@@ -5,6 +5,7 @@
 }
 .GalleryContainer ul {   
     display: flex;
+    
     margin-bottom: 10px;
     padding-left: 0px;
 }
@@ -29,11 +30,11 @@
     flex-wrap: wrap;
 }
 .product .itemBox {
-    width: 300px;
+    min-width: 300px;
     height: 300px;
     margin: 5px;
-    /* flex: 1;
-    min-width: 256px; */
+    /* Comment both lines and uncomment above for old effect without wrap */
+    flex: 1; 
     cursor: pointer;
 
     transition: transform 0.2s;
@@ -114,4 +115,13 @@
     height: 100%;
     object-fit: scale-down;
     max-height: 720px;
+}
+
+@media screen and (max-width:500px) {
+    .GalleryContainer ul {
+        flex-direction: column;
+    }
+    .GalleryContainer ul li {
+        text-align: center;
+    }
 }
