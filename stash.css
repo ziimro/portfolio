@@ -55,7 +55,7 @@ html, body {
     flex: 1;
     flex-wrap: wrap;
 }
-.videoproduct .videoitem {
+.videoproduct .videoitem { 
     display: flex;
     margin: 5px;
     flex: 1;
