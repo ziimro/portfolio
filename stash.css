@@ -55,7 +55,7 @@ html, body {
     flex: 1;
     flex-wrap: wrap;
 }
-.videoproduct .videoitem { 
+.videoproduct .videoitem {
     display: flex;
     margin: 5px;
     flex: 1;
@@ -70,7 +70,8 @@ html, body {
     border-width: 4px;
     border-color: #363636;
     border-style: solid;
-    background-color: #242424;
+
+    background-color: #242424e7;
 }
 
 @media screen and (max-width:500px) {
