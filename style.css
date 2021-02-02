@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'mainfont';
     /* add more font types */
-    src: url('san_francisco\SF UI\SF-UI-Display\SF-UI-Display-Regular.otf') format('opentype');
+    src: url('SF-Regular.otf') format('opentype');
 }
 * {
     margin: 0;
