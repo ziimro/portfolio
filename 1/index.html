@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js%22%3E"></script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="viewer"></div>
+
+        <script>
+            $(function() {
+
+            var baseUrl = "/1/obrazki/";
+            var pictureIndex = 0;
+            var pictures = [];
+
+            function getFiles() {
+                $.ajax(baseUrl).success(function(data) {
+                    pictures = [];
+                    $(data).find("a[href]").each(function() {
+                        var href = $(this).attr('href');
+                        if (href.indexOf('.webp') > 0) {
+                            var imagebox = document.createElement("div");
+                            imagebox.className = "imagebox";
+                            var img = document.createElement("img");
+                            img.src = href;
+                            imagebox.append(img)
+                            $("#viewer").append(imagebox)
+                            console.log(href);
+                        }
+                    });
+                    console.log(pictures.length + " pictures loaded!");
+                });
+            }
+            getFiles();
+            });
+        </script>
+    </body>
+</html>
