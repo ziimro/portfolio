@@ -1,4 +1,9 @@
 /* Image Gallery */
+#viewer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .GalleryContainer {
     width: calc(100% - 40px);
     padding: 20px;
@@ -25,25 +30,21 @@
     color: rgb(0, 0, 0);
 }
 
-/* ItemBox */
-.product {
-    display: flex;
-    flex-wrap: wrap;
-}
-.product .itemBox {
+/* Gallery elements */
+
+.imagebox {
     min-width: 300px;
     height: 300px;
     margin: 5px;
-    /* Comment both lines and uncomment above for old effect without wrap */
     flex: 1; 
     cursor: pointer;
 
     transition: transform 0.2s;
 }
-.product .itemBox:hover {
+.imagebox:hover {
     transform: scale(1.025);
 }
-.product .itemBox img {
+.imagebox img {
     position: flex;
     flex-wrap: wrap;
     top: 0;

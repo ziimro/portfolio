@@ -11,6 +11,8 @@
 
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="gallerystyle.css">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js%22%3E"></script>
+        <script src="gallery.js"></script>
     </head>
 
     <body>
@@ -39,38 +41,13 @@
             
             <div class="GalleryContainer">
                 <ul>
-                    <li class="list active" data-filter="All">All</li>
-                    <li class="list" data-filter="Thumbnails">Thumbnails</li>
-                    <li class="list" data-filter="Logos">Logos</li>
-                    <li class="list" data-filter="Graphics">Graphics</li>
+                    <li class="list active" data-filter="imagebox">All</li>
+                    <li class="list" data-filter="thumbnail">Thumbnails</li>
+                    <li class="list" data-filter="logo">Logos</li>
+                    <li class="list" data-filter="graphic">Graphics</li>
                 </ul>
-                <div class="product">
-                    <div class="itemBox Graphics"><img src="galleryimages/Chingsoundcloud.webp"></div>
-                    <div class="itemBox Graphics"><img src="galleryimages/isometric project-02-21.webp"></div>
-                    <div class="itemBox Graphics"><img src="galleryimages/Zim wallpaper.webp"></div>
-                    <div class="itemBox Graphics"><img src="galleryimages/twitch banner.webp"></div>
-                    <div class="itemBox Graphics"><img src="galleryimages/isometric project.webp"></div>
-                    <div class="itemBox Thumbnails"><img src="galleryimages/Ghost Smite Lillia Jungle.webp"></div>
-                    <div class="itemBox Thumbnails"><img src="galleryimages/Destroying Evelynn in 3 minutes.webp"></div>
-                    <div class="itemBox Thumbnails"><img src="galleryimages/Unranked to Diamond.webp"></div>
-                    <div class="itemBox Logos"><img src="galleryimages/FraGZ team logov2.webp"></div>
-                    <div class="itemBox Logos"><img src="galleryimages/tblogo.webp"></div>
-                    <div class="itemBox Logos"><img src="galleryimages/Zim logo tiangle-01.webp"></div>
-                    <div class="itemBox Logos"><img src="galleryimages/Zimavatar.webp"></div>
-                    <div class="itemBox Thumbnails"><img src="galleryimages/fortnitethumbnail.webp"></div>
-                    <div class="itemBox Thumbnails"><img src="galleryimages/smurfing on low elo players.webp"></div>
-                    
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                    <div class="itemBox Graphics Thumbnails Logos"></div>
-                </div>
-                <div class="fulscreenimg"></div>
+    
+                <div id="viewer"></div>
             </div>
         </div>
 
@@ -89,12 +66,5 @@
                 <img>
             </div>
         </div>
-
-        <script
-		    src="https://code.jquery.com/jquery-3.5.1.js"
-			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-            crossorigin="anonymous">
-        </script>
-        <script type="text/javascript" src="gallery.js"></script>
     </body>
 </html>
