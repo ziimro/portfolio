@@ -9,32 +9,29 @@ $(document).ready(function(){
 			pictures = [];
 			$(data).find("a[href]").each(function() {
 				var href = $(this).attr('href');
+				var imagebox;
 				if (href.indexOf('.webp') > 0) {
-					var imagebox = document.createElement("div");
+					imagebox = document.createElement("div");
 					imagebox.className = "imagebox";
 					var img = document.createElement("img");
 					img.src = href;
 					imagebox.append(img)
 					$("#viewer").append(imagebox)
-					//console.log(href);
 				}
 
-				if (href.indexOf('logo') > 0) {
-					$(".imagebox").toggleClass("logo");
-				}
-				if (href.indexOf('thumbnail') > 0) {
-					$(".imagebox").toggleClass("thumbnail");
-				}
-				if (href.indexOf('graphic') > 0) {
-					$(".imagebox").toggleClass("graphic");
-				}
-
-				//make a function read index from datafilter and apply datafilter as a class
-				// const datafilter = $(".list").attr("data-filter");
-				// console.log(datafilter);
-				// if (href.indexOf(datafilter)) {
-				// 	$(".imagebox").toggleClass("man");
+				// if (href.indexOf("logo") > -1) {
+				// 	$(imagebox).toggleClass("logo", true);
+				// 	console.log(href, 'assign logo');
+				// 	console.log(imagebox.classList);
 				// }
+
+				var datatypes = ["logo", "thumbnail", "graphic"]
+				for (var x of datatypes)
+					if (href.indexOf(x) > -1) {
+						$(imagebox).toggleClass(x, true)
+						console.log(href, 'assign thumbnail');
+				 		console.log(imagebox.classList);
+				}
 			});
 
 			// imageviewer script by 6483 (ty for help <3)
