@@ -3,38 +3,30 @@
 <html>
     <head>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js%22%3E"></script>
-        <link rel="stylesheet" href="index.css">
+        <script src="gallery.js"></script>
+        <link rel="stylesheet" href="index.css">   
     </head>
     <body>
-        <div id="viewer"></div>
 
-        <script>
-            $(function() {
+        <div class="GalleryContainer">
+            <ul>
+                <li class="list active" data-filter="imagebox">All</li>
+                <li class="list" data-filter="thumbnail">Thumbnails</li>
+                <li class="list" data-filter="logo">Logos</li>
+                <li class="list" data-filter="graphic">Graphics</li>
+            </ul>
 
-            var baseUrl = "/1/obrazki/";
-            var pictureIndex = 0;
-            var pictures = [];
+            <div id="viewer"></div>
 
-            function getFiles() {
-                $.ajax(baseUrl).success(function(data) {
-                    pictures = [];
-                    $(data).find("a[href]").each(function() {
-                        var href = $(this).attr('href');
-                        if (href.indexOf('.webp') > 0) {
-                            var imagebox = document.createElement("div");
-                            imagebox.className = "imagebox";
-                            var img = document.createElement("img");
-                            img.src = href;
-                            imagebox.append(img)
-                            $("#viewer").append(imagebox)
-                            console.log(href);
-                        }
-                    });
-                    console.log(pictures.length + " pictures loaded!");
-                });
-            }
-            getFiles();
-            });
-        </script>
+            <div class="imageView">
+                <div class="imageViewPanel">
+                    <div class="imageViewSpacer"></div>
+                    <div class="imageViewClose"><img class="closeicon" src="images/closeicon.svg"></div>
+                </div>
+                <div class="imageViewImage">
+                    <img>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
