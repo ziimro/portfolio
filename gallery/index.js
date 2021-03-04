@@ -1,6 +1,5 @@
 $(document).ready(function(){
-	var baseUrl = "/galleryimages/";
-	var pictureIndex = 0;
+	var baseUrl = "/gallery/galleryimages/";
 	var pictures = [];
 
 	// loading and listing files
@@ -14,7 +13,7 @@ $(document).ready(function(){
 					imagebox = document.createElement("div");
 					imagebox.className = "imagebox";
 					var img = document.createElement("img");
-					img.src = href;
+					img.src = baseUrl + href;
 					imagebox.append(img)
 					$("#viewer").append(imagebox)
 				}
@@ -29,7 +28,6 @@ $(document).ready(function(){
 				for (var x of datatypes)
 					if (href.indexOf(x) > -1) {
 						$(imagebox).toggleClass(x, true)
-						console.log(href, 'assign thumbnail');
 				 		console.log(imagebox.classList);
 				}
 			});
