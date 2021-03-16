@@ -1,63 +1,85 @@
-$(document).ready(function(){
-	var baseUrl = "/gallery/galleryimages/";
-	var pictures = [];
+let ready = (callback) => {
+    if (document.readyState != "loading") callback()
+    else document.addEventListener("DOMContentLoaded", callback)
+  }
+
+ready(() => { 
+	var baseUrl = "./galleryimages";
 
 	// loading and listing files
 	function getFiles() {
-		$.ajax(baseUrl).success(function(data) {
-			pictures = [];
-			$(data).find("a[href]").each(function() {
-				var href = $(this).attr('href');
-				var imagebox;
-				if (href.indexOf('.webp') > 0) {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", baseUrl, true);
+		xhr.responseType = 'document';
+		xhr.onload = () => {
+		if (xhr.status === 200) {
+			var elements = xhr.response.getElementsByTagName("a");
+			for (x of elements) {
+				let imagebox;
+				if (x.href.match(/\.(webp)$/)) { 
 					imagebox = document.createElement("div");
 					imagebox.className = "imagebox";
-					var img = document.createElement("img");
-					img.src = baseUrl + href;
-					imagebox.append(img)
-					$("#viewer").append(imagebox)
+					let img = document.createElement("img");
+					img.src = x.href;
+					imagebox.appendChild(img);
+					document.getElementById("viewer").appendChild(imagebox);
 				}
 
-				// if (href.indexOf("logo") > -1) {
-				// 	$(imagebox).toggleClass("logo", true);
-				// 	console.log(href, 'assign logo');
-				// 	console.log(imagebox.classList);
-				// }
-
-				var datatypes = ["logo", "thumbnail", "graphic"]
-				for (var x of datatypes)
-					if (href.indexOf(x) > -1) {
-						$(imagebox).toggleClass(x, true)
+				// add classes from array
+				let datatypes = ["logo", "thumbnail", "graphic"]
+				for (var i of datatypes)
+					if (x.href.indexOf(i) > -1) {
+						imagebox.classList.toggle(i, true)
 				 		console.log(imagebox.classList);
 				}
-			});
 
-			// imageviewer script by 6483 (ty for help <3)
-			$('.imagebox').click(function(e) {
-				$('.imageView').addClass('imageView-visible');
-				$('.imageViewImage img').attr('src', e.currentTarget.childNodes[0].src);
-			});
+				// navbar sorting
+				document.querySelectorAll('.list').forEach(list => {
+					list.addEventListener('click', e => {
+					  	const value = e.target.dataset.filter;
+					  	document.querySelectorAll('.imagebox').forEach(imagebox => {
+							if (value == 'All') {
+							imagebox.style.display = 'block'
+							} else {
+							imagebox.style.display = imagebox.classList.contains(value) ? 'block' : 'none';
+							}
+					  	});
+					
+						// add/remove active class on selected item
+					  	e.target.classList.add('active');
+					  	Array.from(e.target.parentNode.children).forEach(sibling => {
+							if (sibling != e.target) {
+							sibling.classList.remove('active');
+							}
+					  	});
+					});
+				});
+				
+				// image viewer script
+				const imageboxes = document.querySelectorAll(".imagebox");
+				const imageView = document.querySelector(".imageView");
+				const imageViewImage = document.querySelector(".imageViewImage").querySelector("img");
+				const imageViewClose = document.querySelector(".imageViewClose");
 
-			$('.imageViewClose').click(function() {
-				$('.imageView').removeClass('imageView-visible');
-			});
-		});
+				function closeBtnFunction() {
+					imageViewClose.addEventListener("click", () => {
+						imageView.classList.remove("imageView-visible");
+					});
+				}
+				for (let x of imageboxes) 
+				x.addEventListener("click", () => {
+					imageView.classList.add("imageView-visible");
+					imageViewImage.src = x.childNodes[0].src;
+					closeBtnFunction();
+				});
+				
+			};
+		}
+			else {
+				alert('Request failed. Returned status of ' + xhr.status);
+			}
+		}
+	xhr.send()
 	}
 	getFiles();
-
-	// navbar sorting
-	$('.list').click(function(){
-		const value = $(this).attr('data-filter');
-		if (value == 'All'){
-			$('.imagebox').show('1000');
-		}
-		else {
-			$('.imagebox').not('.'+value).hide('1000');
-			$('.imagebox').filter('.'+value).show('1000');
-		}
-	})
-	// add active class on selected item
-	$('.list').click(function(){
-		$(this).addClass('active').siblings().removeClass('active');
-	})
-})
+});
